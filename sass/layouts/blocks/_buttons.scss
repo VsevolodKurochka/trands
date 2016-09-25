@@ -66,6 +66,9 @@
   &-single{
     @include resp-min(sm){
       margin-top: 70px;
+      &.small{
+        margin-top: 43px;
+      }
     }
     @include resp-max(sm){
       margin-top: 35px;

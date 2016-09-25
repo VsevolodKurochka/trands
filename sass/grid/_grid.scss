@@ -3,7 +3,7 @@ Start: COLUMNS
 ======================== */
 @include make-column(xs,"not-push","not-pull","not-offset");
 @include resp-min(sm){
-  @include make-column(sm,"not-push","not-pull","not-offset");
+  @include make-column(sm,"not-push","not-pull","offset");
 }
 @include resp-min(md){
   @include make-column(md,"not-push","not-pull","offset");
@@ -157,6 +157,11 @@ End:  HIDDEN AND VISIBLE UTILITIES
 }
 .no-m{
   margin-bottom: 0 !important;
+}
+@include resp-max(sm){
+  .max-sm-no-pad{
+    padding-bottom: 0;
+  }
 }
 .block{
   &-inline{
