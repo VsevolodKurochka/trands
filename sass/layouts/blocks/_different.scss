@@ -1,0 +1,209 @@
+.corp{
+  color: setColor(corp);
+}
+.black{
+  color: setColor(black);
+}
+.white{
+  color: setColor(light);
+}
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+    max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+.main-form{
+  width: 100%;
+  @include resp-min(sm){
+    width: 300px;
+  }
+  @extend .center-block;
+  input{
+    border: 1px solid #eeeeee;
+    @include borderR(5px);
+    @extend .block-inline;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(253, 188, 48, 0.17);
+    @extend .regular;
+    @extend .transition;
+    &:focus{
+      border-color: setColor(corp);
+    }
+  }
+  .btn{
+    width: 100%;
+  }
+}
+.fixed{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  &.bottom{
+    bottom: 0;
+  }
+}
+.conf{
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+  z-index: -1;
+  
+  @include resp-max(md){
+    width: 100%;
+  }
+  @include resp-min(md){
+    right: -215px;
+    max-width: none;
+    @include resp-max(lg){
+      right: -365px;
+      width: 800px;
+      height: 563px;
+    }
+  }
+  @include resp-max(sm){
+    width: 800px;
+    max-width: none;
+    left: 0;
+  }
+}
+.crips{
+  position: absolute;
+  left: 0;
+  top: 48px;
+  width: 706px;
+  max-width: none;
+  z-index: -1;
+  @include resp-min(sm){
+    left: 210px;
+  }
+  &-purple{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 706px;
+    height: 466px;
+    @include bg("../img/cripsPurple.png", $pos: center center);
+    @include resp-min(sm){
+      left: 50%;
+      top: 50%;
+      margin-left: -353px;
+      margin-top: -233px;
+    }
+  }
+}
+.trand{
+  // @include resp-min(sm){
+  //   &-img,
+  //   &-text{
+  //     display: inline-block;
+  //     vertical-align: top;
+  //   }
+  // }
+  @include resp-max(sm){
+    margin-bottom: 30px;
+  }
+  @include resp-max(lg){
+    text-align: center;
+    @include resp-min(sm){
+      min-height: 150px;
+      &-img{
+        height: 62px;
+        img{
+          max-height: 55px;
+        }
+      }
+    }
+  }
+  @include resp-min(lg){
+    min-height: 135px;
+    &-img{
+      float: left;
+      margin-right: 10px;
+    }
+    &-text{
+      overflow: hidden;
+      padding-right: 15px;
+    }
+  }
+}
+
+@include keyframes (infiniteRotate) {
+  from {
+    @include transform( rotate(0deg) );
+  }
+  to{
+    @include transform( rotate(360deg) );
+  }
+}
+.infiniteRotate{
+  @include animation(infiniteRotate 5s linear infinite);
+}
+.task{
+  &-bg{
+    @include bg("../img/task.jpg");
+    padding: 66px 15px;
+
+    &-corp{
+      background-color: rgba(0, 72, 255, 0.7);
+      position: absolute;
+      right: 0;
+      top: 0;
+      
+      height: 100%;
+      @include resp-min(sm){
+        width: 330px;
+      }
+      @include resp-min(md){
+        width: 375px;
+      }
+    }
+  }
+  @include resp-min(md){
+    &-bg{
+      padding: 66px 35px;  
+    }
+  }
+  &-title{
+    margin-bottom: 17px;
+  }
+  &-p{
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  &-phone{
+    font-size: 24px;
+    margin-top: 24px;
+    @include resp-min(lg){
+      margin-left: -15px;
+    }
+  }
+  &-btn{
+    margin-top: 9px;
+    margin-bottom: 34px;  
+  }
+  @include resp-max(sm){
+    &-bg{
+      padding-bottom: 0;
+    }
+    &-btns-wrap{
+      background-color: rgba(0, 72, 255, 0.7);
+      padding: 34px 0;
+      margin-top: 34px;
+    }
+  }
+}

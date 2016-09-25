@@ -1,0 +1,53 @@
+.header {
+	@extend .cf;
+	overflow: hidden;
+	&-btn,
+	&-city{
+	  margin-top: 30px;	
+	}
+	@include resp-max(md){
+		padding-top: 30px;
+		&-information{
+			padding-bottom: 30px;
+		}
+		&-text{
+			padding: 30px 15px;
+		}
+	}
+	@include resp-min(md){
+		&-margin{
+			margin-top: 57px;
+		}
+		&-city{
+			margin-left: 20px;
+			margin-top: 49px;	
+		}
+		&-btn{
+			margin-top: 46px;
+		}
+		&-date{
+			margin-right: 17px;
+		}
+		@include resp-max(lg){
+			&-logo{
+				margin-top: 15px;
+			}
+			&-text{
+				padding-top: 110px;
+			  padding-bottom: 30px;
+			  max-width: 430px;
+			}
+		}
+	}
+	@include resp-min(lg){
+		padding: 72px 0 25px;
+		min-height: 640px;
+		&-text{
+			padding-top: 160px;
+			line-height: 27px;
+		}
+		&-margin{
+			margin-top: 105px;
+		}
+	}
+}

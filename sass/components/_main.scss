@@ -1,0 +1,40 @@
+body{
+  @each $property, $value in $defaultFont{
+    #{$property}: #{$value};
+  }
+  font-size: 18px;
+  @include resp-min(sm){
+    font-size: 19px;
+  }
+  @include resp-min(lg){
+    font-size: 21px;
+  }
+}
+img{
+  @extend .block-inline;
+  max-width: 100%;
+}
+input{
+  &:focus{
+    &::-webkit-input-placeholder{
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+a,button{
+  cursor: pointer;
+}
+@for $i from -2 through 6{
+  .z-index-#{$i}{
+    z-index: $i;
+  }
+}
